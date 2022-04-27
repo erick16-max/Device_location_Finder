@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% load static %}
+<link rel="shortcut icon" type="image/png" href="{% static 'base/img/finder.jpg' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'base/style.css' %}">
+<script src="https://kit.fontawesome.com/f68a008ec3.js" crossorigin="anonymous"></script>
+<title>Device Location Finder</title>
+
+</head>
+<body>
+    <div class="header">
+        <h1>Device Location Finder</h1>
+        <div class="handles">
+            <a href="https://twitter.com/RickSide_Tech"><i class="fab fa-github fa-2x" style="color:#333"></i>GitHub</a>
+            <a href="https://www.linkedin.com/in/erick-gege/"><i class="fab fa-linkedin fa-2x" style="color:#0077b5"></i>LinkedIn</a>
+            <a href="https://twitter.com/RickSide_Tech"><i class="fab fa-twitter-square fa-2x" style="color:#1DA1F2"></i>Twitter</a>
+        </div>
+    </div>
+
+<section>
+    
+    <div class="sidebar">
+        <form class="example" action="" method="get" style="max-width:700px">
+            <input type="text" placeholder="Enter Ip Address..." name="ip_address" value={{ip_address}}>
+            <button type="submit"><i class="fas fa-search "></i></button>
+          </form>
+
+          <div class="location">
+            {% if ip_address %}
+
+                <div class="items">
+                    <h3 style="text-align:center;color:#333;font-size:20px;">
+                        <i class="fas fa-info" 
+                        style="background-color:#333;color:#fff; width:25px; height:25px; padding-top:2px; border-radius:50%;"></i>
+                         Custom IP Device Location Details
+                    </h3>
+                    <div class="line"></div>
+                    <div class="items">
+                        <div class="item">
+                            <i class="fas fa-map-marker-alt fa-2x" style="color:#2196F3"></i>
+                            <h3>{{road}}, {{state}}, {{country}}</h3>
+                        </div>
+                        <div class="line"></div>
+                        <div class="item">
+                            <i class="far fa-compass fa-2x " style="color:#92c5eb"></i>
+                            <h3>{{lat}}&deg;, {{lng}}&deg;</h3>
+                        </div>
+                        <div class="line"></div>
+                        <div class="item">
+                            <i class="fas fa-mobile fa-2x" style="color:#657786"></i>
+                            <h3>{{ip_address}}</h3>
+                        </div>
+                    </div>
+                </div>
+
+          {% elif client_ip %}
+            <div class="items">
+                <h3 style="text-align:center;color:#333;font-size:20px;">
+                    <i class="fas fa-info" 
+                    style="background-color:#333;color:#fff; width:25px; height:25px; padding-top:2px; border-radius:50%;"></i>
+                     Your Device Location Details
+                </h3>
+                <div class="line"></div>
+                <div class="item">
+                    <i class="fas fa-map-marker-alt fa-2x" style="color:#2196F3"></i>
+                    <h3>{{road}}, {{state}}, {{country}}</h3>
+                </div>
+                <div class="line"></div>
+                <div class="item">
+                    <i class="far fa-compass fa-2x " style="color:#92c5eb"></i>
+                    <h3>{{lat}}&deg;, {{lng}}&deg;</h3>
+                </div>
+                <div class="line"></div>
+                <div class="item">
+                    <i class="fas fa-mobile fa-2x" style="color:#657786"></i>
+                    <h3>{{client_ip}}</h3>
+                </div>
+            </div>
+
+          {% else %}
+            <div class="items ">
+                <div class="item">
+                    <i class="fas fa-exclamation-circle fa-3x" style="color:#ff0000"></i>
+                    <h1 style="color:#ff0000; padding:10px;">{{error}}</h1>
+                </div>
+            </div>
+          {% endif %} 
+          </div>
+    </div>
+    <div class="map">
+        {{map | safe}}
+    </div>
+</section>
+
+
+
+</body>
+</html> 

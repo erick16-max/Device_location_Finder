@@ -1,0 +1,135 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    padding: 0;
+    margin: 0;
+  }
+.header {
+  text-align: center;
+  color: #555;
+  font-style: oblique;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 40px;
+}
+.handles a{
+  color: #444;
+  text-decoration: none;
+  padding-left: 6px;
+}
+.handles a:hover {
+  opacity: 0.8;
+  
+}
+  
+
+  section {
+      display: flex;
+      padding:2px;
+      position: relative;
+      
+  }
+  .sidebar {
+    z-index: 9;
+    margin: 20px;
+    margin-top: 80px;
+    width: 400px;
+  
+  }
+   .map {
+    width: 100%;
+    height: 100%;            
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.8
+   }
+  
+  /* Style the search field */
+  form {
+    padding: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    width: 400px;
+   
+  }
+  form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid #f3f3f3;
+    float: left;
+    width: 80%;
+    background: #fff;
+    outline: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  form.example input[type=text]:focus{
+    outline: 1px solid #999;
+  }
+  
+  /* Style the submit button */
+  form.example button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid #f3f3f3;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  
+  form.example button:hover {
+    background: #0b7dda;
+  }
+  
+  /* Clear floats */
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  .location{
+    background-color: #fff;
+    padding: 6px 7px;
+    margin-top: 30px;
+    margin: 1px solid #f1f1f1;
+    box-shadow: rgba(100, 100, 111, 0.2) ;
+    
+   
+  }
+  .items {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    
+    
+    
+  }
+.item{
+  display: flex; 
+  padding-top: 5px;
+}
+.item h3 {
+  margin-left: 20px;
+  align-items: center;
+  color: #555;
+  font-style:oblique;
+}
+
+.line {
+  border-bottom: 2px solid #f6f6f6;
+}
+.footer{
+  margin-top: 100px;
+  color: #000;
+  z-index: 10;
+}
